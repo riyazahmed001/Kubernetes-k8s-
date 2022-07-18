@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: myapp-replicaset
+  labels:
+    app: myapp
+    type: front-end
+spec:
+# the template details can be copied
+# from pod-definition.yaml
+  template:
+    metadata:
+      name: my-app-pod
+      labels:
+        app: myapp
+        type: front-end
+    spec:
+      containers:
+        - name: nginx-containers
+        # specify the image name we want to use 
+          image: nginx 
+# replicas are used to specify the no of pods needed
+  replicas: 3
+  selector:
+    matchLabels:
+      type: front-end
+
+# To create a replicaset use the following command
+
+# `kubectl create -f replicaset-definition.yaml`
+
+# To get the available replica set use
+
+# `kubectl get replicaset`
+
+# make updates to the replica set
+
+# `kubectl scale --replicas=6 replicaset myapp-replicaset`

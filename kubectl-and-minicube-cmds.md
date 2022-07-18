@@ -10,6 +10,10 @@
 
 `kubectl version`
 
+### stopping minikube cluster
+
+`minikube stop`
+
 ### kubectl commands
 
 `kubectl get nodes`

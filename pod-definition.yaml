@@ -7,4 +7,8 @@ metadata:
 spec:
   containers:
     - name: nginx-containers
-      image: nginx    
+    # specify the image name we want to use 
+      image: nginx 
+
+# To create a pod use the following command
+# `kubectl create -f pod-definition.yaml`
