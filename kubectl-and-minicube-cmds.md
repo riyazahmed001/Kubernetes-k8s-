@@ -2,6 +2,8 @@
 
 `minikube start --vm-driver=hyperkit`
 
+`minikube start --driver=docker`
+
 `kubectl get nodes`
 
 `minikube status`
@@ -11,6 +13,8 @@
 ### kubectl commands
 
 `kubectl get nodes`
+
+`kubectl run nginx --image=nginx`
 
 `kubectl get pod`
 
