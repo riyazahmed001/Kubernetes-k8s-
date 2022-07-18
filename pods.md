@@ -27,3 +27,7 @@
 
 `kubectl delete pods {pod_name}`
 `kubectl delete pods nginx`
+
+### creating a pod using yaml file
+
+`kubectl create -f pod-definition.yaml`
