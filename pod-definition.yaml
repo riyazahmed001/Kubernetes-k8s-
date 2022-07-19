@@ -12,3 +12,9 @@ spec:
 
 # To create a pod use the following command
 # `kubectl create -f pod-definition.yaml`
+
+# To get details on the created pods
+# `kubectl get pods`
+
+# deleting a pod
+# `kubectl delete pods {pod_name}`

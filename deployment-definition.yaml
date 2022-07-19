@@ -1,7 +1,7 @@
 apiVersion: apps/v1
-kind: ReplicaSet
+kind: Deployment
 metadata:
-  name: myapp-replicaset
+  name: myapp-deployment
   labels:
     app: myapp
     type: front-end
@@ -25,20 +25,17 @@ spec:
     matchLabels:
       type: front-end
 
-# To create a replicaset use the following command
+# `kubectl get all` commands is used to get all the resources
+# By default it will have one k8s service
 
-# `kubectl create -f replicaset-definition.yaml`
+# To create a deployment use the following command
 
-# To get the available replica set use
+# `kubectl create -f deployment-definition.yaml`
 
-# `kubectl get replicaset`
+# To get the available deployment
 
-# make updates to the replica set
+# `kubectl get deployment`
 
-# `kubectl scale --replicas=6 replicaset myapp-replicaset`
+# To delete the deployment
 
-# To delete the replicaset
-
-# `kubectl delete rs myapp-replicaset`
-
-# In above command rs is the short form of replicaset
+# `kubectl delete deployment myapp-deployment`
