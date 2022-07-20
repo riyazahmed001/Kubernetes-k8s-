@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-deployment
+  labels:
+    app: myapp
+    type: front-end
+spec:
+# the template details can be copied
+# from pod-definition.yaml
+  template:
+    metadata:
+      name: my-app-pod
+      labels:
+        app: myapp
+        type: front-end
+    spec:
+      containers:
+        - name: nginx-containers
+        # specify the image name we want to use 
+          image: nginx 
+# replicas are used to specify the no of pods needed
+  replicas: 3
+  selector:
+    matchLabels:
+      type: front-end
+
+# `kubectl get all` commands is used to get all the resources
+# By default it will have one k8s service
+
+# To create a deployment use the following command
+
+# `kubectl create -f deployment-definition.yaml`
+
+# To get the available deployment
+
+# `kubectl get deployment`
+
+# To delete the deployment
+
+# `kubectl delete deployment myapp-deployment`

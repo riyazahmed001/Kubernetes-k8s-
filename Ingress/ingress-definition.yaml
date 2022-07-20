@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: myapp-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: riyaz.info # when we enter myapp.com in the browser ingress accepts the request and forward to service
+    http:
+      paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: myapp-service # service which it needs to forward the request
+              port:
+                number: 80 # port which it needs to forward the request
